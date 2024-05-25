@@ -308,11 +308,12 @@ export const Canvas = ({
 
         setMyPresence({ cursor: current })
     }, [
+        continueDrawing,
         camera,
         canvasState,
         resizeSelectedLayer,
         translateSelectedLayers,
-        continueDrawing,
+
         startMultiSelection,
         updateSelectionNet
     ]);
@@ -372,7 +373,7 @@ export const Canvas = ({
             })
         }
         history.resume();
-    }, [camera, canvasState, history, insertLayer, unselectLayers, insertPath]);
+    }, [setCanvasState, camera, canvasState, history, insertLayer, unselectLayers, insertPath]);
 
 
 

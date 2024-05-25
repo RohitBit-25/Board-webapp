@@ -121,7 +121,7 @@ export function penPointsToPathLayer (
   let bottom= Number.NEGATIVE_INFINITY;
 
   for (const point of points ){
-    const [x,y] = point;
+    const [x, y] = point;
     if(left > x) {
       left = x;
     }
@@ -129,7 +129,7 @@ export function penPointsToPathLayer (
       top= y;
     }
 if(right < x) {
-  right=x;
+  right = x;
 }    
 if(bottom < y) {
 bottom = y;
@@ -142,10 +142,10 @@ bottom = y;
     x:left,
     y:top,
     width: right - left,
-    height :bottom - top,
+    height: bottom - top,
     fill: color,
     points: points
-      .map(([x,y,pressure]) => [x - left, y- top, pressure]),
+      .map(([x, y, pressure]) => [x - left, y- top, pressure]),
   }
 };
 
@@ -159,7 +159,7 @@ export function getSvgPathFromStroke(stroke: number[][]) {
     return acc;
 
   },
-  ["M", ...stroke[0], "0"]
+  ["M", ...stroke[0], "Q"]
   );
 
   d.push("Z");
